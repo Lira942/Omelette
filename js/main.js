@@ -1,72 +1,27 @@
-class Ingredients{
-    constructor(nom, etats, prix){
-        this.nom = nom,
-        this.etats = etats,
-        this.prix = prix
-        
-    }
-}
+import {Ingredients, Personne, Couteau, Lieu, Poele,Bol} from'./tableau.js';
 
-// 1e Tableau
-class Personnage{
-    constructor(nom, lieu, argent, mainDroite, mainGauche){
-        this.nom =nom,
-        this.lieu = lieu,
-        this.argent = argent,
-        this.mainDroite = mainDroite,
-        this.mainGauche = mainGauche,
-        this.seDeplacer=(lieu)=>{
-            Lieu.personnes.push(this.nom);
-            this.lieu.splice(this.lieu.indexOf(this,1));
-        }
-    }
-}
-
-let lira = new Personnage("Lira","Maison", 40);
-
-// 2e Tableau
-class Couteau{
-    constructor(nom, action){
-        this.nom = nom;
-        this.action = "coupé";
-    }
-}
-
-
-// 3e Tableau
-class Lieu{
-    constructor(nom,personnes){
-        this.nom = nom;
-        this.personnes = personnes
-    }
-}
-
+// LIEUX
 let maison = new Lieu("Maison",[]);
-let epicerie = new Lieu("Epicerie",[]);
-let magasin = new Lieu("Magasin", ["oignon", "oeuf", "epice", "fromage"]);
+let epicerie = new Lieu("Epicerie",["oignon", "oeuf", "epice", "fromage"]);
+let magasin = new Lieu("Magasin", []);
+
+    // PERSONNAGE
+let lira = new Personne("Lira","Maison", 40);
+
+    // COUTEAU
+let couteau = new Couteau("couteau", "couper")
+
+    // INGREDIENTS
+let oignon = new Ingredients("oignon", Couteau.action, 4, "Panier de legumes");
+let oeuf = new Ingredients("oeuf", Couteau.action, 8, "Panier d'oeufs" );
+let epice = new Ingredients("epice", Couteau.action, 5, "Panier d'épice");
+
+    // POELE
+ let poele = new Poele ([],)
+
+    // BOL
+let bol = new Bol([])
 
 
-let poele = [cuir =()=>{
-
-}]
- class Poele{
-     constructor(contenu){
-         this.contenu = [];
-         thiscuir =()=>{
-            Ingredients.etats = "couper";
-        }
-    
-     }
- }
-
-class Bol{
-    constructor(contenu){
-        this.contenu = [];
-        this.nomMelange =()=>{
-        }
-        
-    }
-}
-
-console.log(Personnage.nom + `est actuellement à la ${maison}`);
-lira.seDeplacer(magasin);
+// console.log(Personne.nom + `est actuellement à la ${maison}`);
+// lira.seDeplacer(magasin);
